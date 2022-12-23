@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/styles/colors.dart';
+import 'colors.dart';
 
 const PageHeaderStyle = TextStyle(
     fontWeight: FontWeight.bold, color: Colors.white, letterSpacing: 2.0);

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/db/sp_helper.dart';
-import 'package:ldgr/firebase/firestore.dart';
-import 'package:ldgr/pages/expense/expense_list.dart';
-import 'package:ldgr/utils/date_time_helper.dart';
-import 'package:ldgr/styles/colors.dart';
-import 'package:ldgr/shared/lists.dart';
-import 'package:ldgr/shared/snackbar_messages.dart';
-import 'package:ldgr/utils/router.dart';
-import 'package:ldgr/utils/preprocessor.dart';
-import 'package:ldgr/utils/formatter.dart';
+
+import '../../db/sp_helper.dart';
+import '../../firebase/firestore.dart';
+import '../../shared/lists.dart';
+import '../../shared/snackbar_messages.dart';
+import '../../styles/colors.dart';
+import '../../utils/date_time_helper.dart';
+import '../../utils/formatter.dart';
+import '../../utils/preprocessor.dart';
+import '../../utils/router.dart';
+import 'expense_list.dart';
 
 class UpdateExpensePage extends StatelessWidget {
   final Map entryData;
@@ -315,7 +316,7 @@ class _EntryEditorFormState extends State<EntryEditorForm> {
                       }
                     },
                     child: Text('SAVE'),
-                    style: ElevatedButton.styleFrom(primary: myBlue),
+                    style: ElevatedButton.styleFrom(backgroundColor: myBlue),
                   ),
                 )
               ],

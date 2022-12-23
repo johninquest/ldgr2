@@ -41,7 +41,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "de.johnapps.ldgr"
+        applicationId "de.johnapps.bkkpr"
         minSdkVersion 19
         targetSdkVersion 31 
        /*  versionCode 16 

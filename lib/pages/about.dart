@@ -32,7 +32,7 @@ class AboutPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 10.0),
               child: Text(
-                'Ldgr',
+                'bkkpr',
                 style:
                     TextStyle(fontWeight: FontWeight.bold, letterSpacing: 2.0),
               ),
@@ -46,7 +46,7 @@ class AboutPage extends StatelessWidget {
               margin: EdgeInsets.only(
                   left: 10.0, right: 10.0, bottom: 50.0, top: 10.0),
               child: Text(
-                'Ldgr is the single-entry bookkeeping app for your small one-man business',
+                'bkkpr is the single-entry bookkeeping app for your small one-man business',
                 textAlign: TextAlign.center,
                 style: TextStyle(letterSpacing: 0.5),
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:ldgr/pages/analysis/chart_data_models.dart';
+import 'chart_data_models.dart';
 import 'filters.dart';
 
 class MyPieChart extends StatelessWidget {

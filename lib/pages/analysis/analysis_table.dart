@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/pages/analysis/filters.dart';
 import '../../styles/colors.dart';
+import 'filters.dart';
 
 class AnalysisTable extends StatelessWidget {
   final List daybookData;

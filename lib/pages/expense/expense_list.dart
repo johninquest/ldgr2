@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/styles/colors.dart';
 import '../../firebase/firestore.dart';
+import '../../styles/colors.dart';
 import '../../utils/formatter.dart';
 import '../../utils/router.dart';
 import '../../shared/bottom_nav_bar.dart';

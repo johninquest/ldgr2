@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/styles/colors.dart';
-import 'package:ldgr/styles/style.dart';
+
+import '../styles/colors.dart';
+import '../styles/style.dart';
 
 class MyItemList {
   List<DropdownMenuItem<String>> accountList = [

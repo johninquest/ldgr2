@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/shared/lists.dart';
-import 'package:ldgr/styles/colors.dart';
+
+import '../../shared/lists.dart';
+import '../../styles/colors.dart';
 
 class InputIncomePage extends StatelessWidget {
   const InputIncomePage({Key? key}) : super(key: key);

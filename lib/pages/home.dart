@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/pages/income/add_income.dart';
 import '../utils/router.dart';
 import '../shared/bottom_nav_bar.dart';
 import '../shared/dialogs.dart';
 import '../shared/side_nav_bar.dart';
-import '../styles/colors.dart';
 import 'expense/add_expense.dart';
+import 'income/add_income.dart';
 import 'stock/overview.dart';
 
 class HomePage extends StatelessWidget {

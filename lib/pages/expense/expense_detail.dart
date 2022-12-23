@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/db/sp_helper.dart';
-import 'package:ldgr/firebase/firestore.dart';
-import 'package:ldgr/pages/expense/update_expense.dart';
-import 'package:ldgr/pages/expense/expense_list.dart';
-import 'package:ldgr/utils/currency.dart';
-import 'package:ldgr/utils/formatter.dart';
-import 'package:ldgr/utils/preprocessor.dart';
-import 'package:ldgr/utils/router.dart';
-import 'package:ldgr/shared/bottom_nav_bar.dart';
-import 'package:ldgr/shared/snackbar_messages.dart';
-import 'package:ldgr/styles/colors.dart';
+import '../../db/sp_helper.dart';
+import '../../firebase/firestore.dart';
+import '../../shared/bottom_nav_bar.dart';
+import '../../shared/snackbar_messages.dart';
+import '../../styles/colors.dart';
+import '../../utils/currency.dart';
+import '../../utils/formatter.dart';
+import '../../utils/preprocessor.dart';
+import '../../utils/router.dart';
+import 'expense_list.dart';
+import 'update_expense.dart';
 
 class ItemDetailPage extends StatefulWidget {
   final rowData;
@@ -53,7 +53,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expense details'),
+        title: Text('expense details'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

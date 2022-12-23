@@ -1,4 +1,4 @@
-import 'package:ldgr/db/sp_helper.dart';
+import '../db/sp_helper.dart';
 
 class CurrencyHandler {
   fromCountry(String? country) {
@@ -28,11 +28,11 @@ class CurrencyHandler {
       case 'togo':
         return 'XOF';
       case 'congo_drc':
-        return 'CDF'; 
+        return 'CDF';
       case 'djibouti':
-        return 'DJF'; 
+        return 'DJF';
       case 'egypt':
-        return 'EGP';      
+        return 'EGP';
       case 'eritrea':
         return 'ERN';
       case 'ethiopia':
@@ -42,27 +42,27 @@ class CurrencyHandler {
       case 'ghana':
         return 'GHS';
       case 'gambia':
-        return 'GMD'; 
+        return 'GMD';
       case 'guinea':
-        return 'GNF';  
+        return 'GNF';
       case 'kenya':
         return 'KES';
       case 'lesotho':
         return 'LSL';
       case 'liberia':
-        return 'LRD'; 
+        return 'LRD';
       case 'libya':
-        return 'LYD';  
+        return 'LYD';
       case 'malawi':
         return 'MWK';
       case 'mauritius':
-        return 'MUR'; 
+        return 'MUR';
       case 'morocco':
-        return 'MAD'; 
+        return 'MAD';
       case 'mozambique':
-        return 'MZN';   
+        return 'MZN';
       case 'namibia':
-        return 'NAD';  
+        return 'NAD';
       case 'nigeria':
         return 'NGN';
       case 'rwanda':
@@ -72,7 +72,7 @@ class CurrencyHandler {
       case 'sierra_leone':
         return 'SLL';
       case 'somalia':
-        return 'SOS';  
+        return 'SOS';
       case 'south_africa':
         return 'ZAR';
       case 'south_sudan':
@@ -80,9 +80,9 @@ class CurrencyHandler {
       case 'sudan':
         return 'SDG';
       case 'tanzania':
-        return 'TZS'; 
+        return 'TZS';
       case 'tunisia':
-        return 'TND';  
+        return 'TND';
       case 'uganda':
         return 'UGX';
       case 'zambia':
@@ -100,7 +100,8 @@ class CurrencyHandler {
   }
 
   Future<String?> getCurrencyData() async {
-    final responseData = await SharedPreferencesHelper().readData('countryName');
+    final responseData =
+        await SharedPreferencesHelper().readData('countryName');
     String _currency = fromCountry(responseData);
     return _currency;
   }

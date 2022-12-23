@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/firebase/firestore.dart';
 import '../../db/sp_helper.dart';
+import '../../firebase/firestore.dart';
 import '../../utils/date_time_helper.dart';
 import '../../utils/preprocessor.dart';
 import '../../utils/router.dart';
@@ -83,7 +83,7 @@ class _UserFormState extends State<UserForm> {
                   onPressed: () => Navigator.of(context).pop(),
                   child: Text('CANCEL'),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.grey,
+                    backgroundColor: Colors.grey,
                   ),
                 ),
               ),

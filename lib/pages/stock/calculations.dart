@@ -1,4 +1,4 @@
-import 'package:ldgr/utils/preprocessor.dart';
+import '../../utils/preprocessor.dart';
 
 class StockCalculations {
   sumOfAddedItems(List? eventLogs) {

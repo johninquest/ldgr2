@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/shared/lists.dart';
-import 'package:ldgr/styles/colors.dart';
+
+import '../../shared/lists.dart';
+import '../../styles/colors.dart';
 
 class AddItemPage extends StatelessWidget {
   const AddItemPage({Key? key}) : super(key: key);
@@ -57,7 +58,8 @@ class _AddItemFormState extends State<AddItemForm> {
                     width: MediaQuery.of(context).size.width * 0.95,
                     padding: EdgeInsets.only(left: 20.0, right: 20.0),
                     child: DropdownButtonFormField(
-                      decoration: InputDecoration(labelText: 'Select business area'),
+                      decoration:
+                          InputDecoration(labelText: 'Select business area'),
                       items: MyItemList().costAreaList,
                       validator: (val) =>
                           val == null ? 'Please select business area!' : null,
@@ -121,7 +123,8 @@ class _AddItemFormState extends State<AddItemForm> {
                           'SAVE',
                           style: TextStyle(color: Colors.white),
                         ),
-                        style: ElevatedButton.styleFrom(primary: myBlue),
+                        style:
+                            ElevatedButton.styleFrom(backgroundColor: myBlue),
                       ),
                     ),
                   ],

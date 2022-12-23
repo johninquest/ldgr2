@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:ldgr/styles/style.dart';
+import '../styles/style.dart';
 
 class Formatter {
   dbToUiValue(String? dbValue) {

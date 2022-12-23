@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/filters/filter_data.dart';
-import 'package:ldgr/filters/filter_logic.dart';
-import 'package:ldgr/pages/expense/expense_detail.dart';
-import 'package:ldgr/utils/formatter.dart';
-import 'package:ldgr/utils/router.dart';
-import 'package:ldgr/shared/custom_widgets.dart';
-import 'package:ldgr/styles/style.dart';
+import '../../filters/filter_data.dart';
+import '../../filters/filter_logic.dart';
+import '../../shared/custom_widgets.dart';
+import '../../styles/style.dart';
+import '../../utils/formatter.dart';
+import '../../utils/router.dart';
+import '../expense/expense_detail.dart';
 
 class SearchPage extends StatefulWidget {
   final List searchData;

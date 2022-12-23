@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/db/sp_helper.dart';
-import 'package:ldgr/pages/inputs/country.dart';
-import 'package:ldgr/pages/analysis/overview.dart';
-import 'package:ldgr/utils/preprocessor.dart';
-import 'package:ldgr/utils/router.dart';
-import 'package:ldgr/pages/inputs/business_info.dart';
-import 'package:ldgr/pages/about.dart';
-import 'package:ldgr/styles/colors.dart';
+import '../db/sp_helper.dart';
+import '../pages/about.dart';
+import '../pages/analysis/overview.dart';
+import '../pages/inputs/business_info.dart';
+import '../pages/inputs/country.dart';
 import '../pages/users/user_list.dart';
+import '../styles/colors.dart';
+import '../utils/preprocessor.dart';
+import '../utils/router.dart';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);

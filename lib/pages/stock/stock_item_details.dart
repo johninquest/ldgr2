@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ldgr/pages/stock/calculations.dart';
-import 'package:ldgr/utils/formatter.dart';
-import 'package:ldgr/styles/colors.dart';
+import '../../styles/colors.dart';
+import '../../utils/formatter.dart';
+import 'calculations.dart';
 
 class StockItemDetails extends StatefulWidget {
   final Map stockItemData;
