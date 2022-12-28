@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         // fontFamily: 'Lato',
         textTheme: GoogleFonts.latoTextTheme());
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       theme: myTheme,
       // darkTheme: ThemeData.dark(),
       home: LoginPage(),

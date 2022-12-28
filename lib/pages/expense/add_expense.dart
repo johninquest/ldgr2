@@ -41,8 +41,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
   TextEditingController _itemCategory = TextEditingController();
   TextEditingController _itemName = TextEditingController();
   TextEditingController _price = TextEditingController();
-  TextEditingController _pickedDate = TextEditingController(
-      text: DateTimeFormatter().toDateString(DateTime.now()));
+  TextEditingController _pickedDate = TextEditingController();
   TextEditingController _quantity = TextEditingController();
 
   String? _costArea;
@@ -78,6 +77,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
         });
       }
     });
+    _pickedDate.text = DateTimeFormatter().toDateString(DateTime.now());
   }
 
   @override

@@ -32,8 +32,8 @@ class SnackBarMessage {
   }
 
   underConstruction(context) {
-    var message = ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Still under construction \u{1F6A7}')));
+    var message = ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('Under construction \u{1F6A7}')));
     return message;
   }
 

@@ -1,3 +1,4 @@
+import 'package:bkkpr/shared/snackbar_messages.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
@@ -16,7 +17,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('bkkpr',
+        title: Text('Ldgr',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               letterSpacing: 3.0,
@@ -153,8 +154,7 @@ class _LoginFormState extends State<LoginForm> {
               Container(
                 margin: EdgeInsets.only(top: 10.0),
                 child: ElevatedButton(
-                  onPressed: () =>
-                      PageRouter().navigateToPage(HomePage(), context),
+                  onPressed: () => SnackBarMessage().underConstruction(context),
                   child: Text(
                     'Continue with Google',
                     style: TextStyle(
@@ -166,8 +166,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               Container(
                 child: ElevatedButton(
-                  onPressed: () =>
-                      PageRouter().navigateToPage(HomePage(), context),
+                  onPressed: () => SnackBarMessage().underConstruction(context),
                   child: Text(
                     'Continue with Facebook',
                     style: TextStyle(

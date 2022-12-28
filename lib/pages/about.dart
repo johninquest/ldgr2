@@ -32,9 +32,9 @@ class AboutPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 10.0),
               child: Text(
-                'bkkpr',
+                'Ldgr',
                 style:
-                    TextStyle(fontWeight: FontWeight.bold, letterSpacing: 2.0),
+                    TextStyle(fontWeight: FontWeight.bold, letterSpacing: 3.0),
               ),
             ),
             Divider(
