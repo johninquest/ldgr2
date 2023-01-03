@@ -20,7 +20,7 @@ class AppInfo extends StatelessWidget {
                 // print('Error => $snapshot');
                 return Text('An error occured!');
               } else if (snapshot.hasData) {
-                final _data = snapshot.data!;
+                final vData = snapshot.data!;
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -32,10 +32,11 @@ class AppInfo extends StatelessWidget {
                     SizedBox(
                       height: 3.0,
                     ), */
-                    Text('v${_data.version}'),
-                    SizedBox(
-                      height: 3.0,
+                    Text(
+                      'v${vData.version}',
+                      style: TextStyle(fontSize: 13.0),
                     ),
+
                     /*    Text('Build number: ${_data.buildNumber}'), */
 /*                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

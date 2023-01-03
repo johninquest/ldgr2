@@ -28,9 +28,8 @@ class AboutPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           /* mainAxisSize: MainAxisSize.max, */
           children: [
-            Spacer(),
             Container(
-              margin: EdgeInsets.only(top: 10.0),
+              margin: EdgeInsets.only(top: 55.0),
               child: Text(
                 'Ldgr',
                 style:
@@ -46,40 +45,40 @@ class AboutPage extends StatelessWidget {
               margin: EdgeInsets.only(
                   left: 10.0, right: 10.0, bottom: 50.0, top: 10.0),
               child: Text(
-                'bkkpr is the single-entry bookkeeping app for your small one-man business',
+                'A lightweight, single-entry bookkeeping app for your small business',
                 textAlign: TextAlign.center,
                 style: TextStyle(letterSpacing: 0.5),
               ),
             ),
-            // SizedBox(height: 50.0,),
-            Container(
-              margin: EdgeInsets.only(top: 5.0),
-              child: GestureDetector(
-                onTap: () =>
-                    WebService().openUrl('https://johnapps.de', context),
-                child: Text(
-                  '\u00A9 JOHN APPS $_currentYear',
-                  style: TextStyle(
-                    letterSpacing: 0.1,
-                    wordSpacing: 3.0,
-                    fontSize: 11.0,
+            Spacer(),
+            Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 5.0),
+                  child: GestureDetector(
+                    onTap: () =>
+                        WebService().openUrl('https://johnapps.de', context),
+                    child: Text(
+                      '\u00A9 JOHN APPS $_currentYear',
+                      style: TextStyle(
+                        letterSpacing: 0.1,
+                        wordSpacing: 3.0,
+                        fontSize: 11.0,
+                      ),
+                    ),
                   ),
+                  decoration: BoxDecoration(
+                      border: Border(
+                          bottom: BorderSide(
+                    width: 0.5,
+                  ))),
                 ),
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                width: 0.5,
-              ))),
+                SizedBox(
+                  height: 13.0,
+                ),
+                AppInfo(),
+              ],
             ),
-            Spacer(
-              flex: 2,
-            ),
-            AppInfo(),
-            /*    Positioned(
-                child: Align(
-                    alignment: FractionalOffset.bottomCenter,
-                    child: Text('Hello'))), */
           ],
         ),
       ),

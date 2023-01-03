@@ -139,10 +139,10 @@ class _StockOverviewDataState extends State<StockOverviewData> {
                   ),
                 ),
                 Divider(
-                  indent: 25.0,
-                  endIndent: 25.0,
+                  indent: 21.0,
+                  endIndent: 21.0,
                   thickness: 1.0,
-                  color: myBlue,
+                  // color: myBlue,
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.85,

@@ -1,4 +1,4 @@
-# <p align="center">bkkpr</p>
+# <p align="center">Ldgr</p>
 
 ### <p align="center">A simple bookkeeping app</p>
 

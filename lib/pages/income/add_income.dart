@@ -164,47 +164,8 @@ class _IncomeFormState extends State<IncomeForm> {
                   ],
                 ),
               ),
-
-              /* Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                  child: DropdownButtonFormField(
-                    decoration: InputDecoration(labelText: 'Cost area'),
-                    items: MyItemList().costAreaList,
-                    validator: (val) =>
-                        val == null ? 'Please select cost area!' : null,
-                    onChanged: (val) => setState(() {
-                      _costArea = val as String?;
-                    }),
-                  )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                  child: DropdownButtonFormField(
-                    isExpanded: true,
-                    decoration: InputDecoration(labelText: 'Source of income'),
-                    // hint: Text('Source of income'),
-                    items: MyItemList().emptyList,
-                    validator: (val) =>
-                        val == null ? 'Please select source of income!' : null,
-                    onChanged: (val) =>
-                        setState(() => incomeSource = val as String?),
-                  )),
-              Container(
-                  width: MediaQuery.of(context).size.width * 0.95,
-                  margin: EdgeInsets.only(bottom: 10.0),
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Amount'),
-                    keyboardType: TextInputType.number,
-                    validator: (val) =>
-                        val!.isEmpty ? 'Please enter amount!' : null,
-                    onChanged: (val) => setState(() {
-                      incomeAmount = val;
-                    }),
-                  )), */
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
