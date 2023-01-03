@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import '../db/sp_helper.dart';
-import '../firebase/firestore.dart';
 import '../shared/snackbar_messages.dart';
-import '../utils/auth.dart';
 import '../utils/router.dart';
-import '../shared/dialogs.dart';
 import '../styles/colors.dart';
 import 'home.dart';
+/* import '../shared/dialogs.dart'; 
+import '../utils/auth.dart';
+import '../firebase/firestore.dart'; */
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -38,7 +38,7 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final _loginFormKey = GlobalKey<FormState>();
-  TextEditingController _userName = TextEditingController();
+  TextEditingController _userId = TextEditingController();
   TextEditingController _userPassword = TextEditingController();
   bool? isChecked = false;
 
@@ -53,21 +53,25 @@ class _LoginFormState extends State<LoginForm> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  width: MediaQuery.of(context).size.width * 0.75,
+                  width: MediaQuery.of(context).size.width * 0.90,
                   margin: EdgeInsets.only(bottom: 10.0, top: 40.0),
                   padding: EdgeInsets.only(left: 20.0, right: 20.0),
                   child: TextFormField(
-                    controller: _userName,
-                    decoration: InputDecoration(labelText: 'UserId'),
+                    controller: _userId,
+                    decoration: InputDecoration(
+                        labelText: 'Email',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 1.0, color: primaryColor))),
                     keyboardType: TextInputType.text,
                     validator: (val) {
                       if (val == null || val.isEmpty) {
-                        return 'Please enter UserId';
+                        return 'Please enter e-mail';
                       }
                     },
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width * 0.75,
+                  width: MediaQuery.of(context).size.width * 0.90,
                   margin: EdgeInsets.only(bottom: 20.0),
                   padding: EdgeInsets.only(left: 20.0, right: 20.0),
                   child: TextFormField(
@@ -75,14 +79,18 @@ class _LoginFormState extends State<LoginForm> {
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,
-                    decoration: InputDecoration(labelText: 'Password'),
+                    decoration: InputDecoration(
+                        labelText: 'Password',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(width: 1.0, color: primaryColor))),
                     keyboardType: TextInputType.text,
                     enabled: true,
-                    /*                   validator: (val) {
+                    validator: (val) {
                       if (val == null || val.isEmpty) {
                         return 'Please enter password';
                       }
-                    }, */
+                    },
                   )),
               Container(
                 width: MediaQuery.of(context).size.width * 0.75,
@@ -91,8 +99,8 @@ class _LoginFormState extends State<LoginForm> {
                 child: Row(
                   children: [
                     Checkbox(
-                      /* checkColor: Colors.white, */
-                      // fillColor: MaterialStateProperty.resolveWith(getColor),
+                      /* checkColor: Colors.white, 
+                       fillColor: MaterialStateProperty.resolveWith(getColor), */
                       value: isChecked,
                       onChanged: (bool? value) {
                         setState(() {
