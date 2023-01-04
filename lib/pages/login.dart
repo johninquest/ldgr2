@@ -162,7 +162,7 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                   /* icon: Icon(Icons.save), */
                   icon: Image.asset(
-                    'assets/images/google_icon.png',
+                    'assets/logos/google.png',
                     height: 24.0,
                     width: 24.0,
                   ),
@@ -183,7 +183,7 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                   /* icon: Icon(Icons.save), */
                   icon: Image.asset(
-                    'assets/images/facebook_icon.png',
+                    'assets/logos/facebook.png',
                     height: 24.0,
                     width: 24.0,
                   ),

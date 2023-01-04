@@ -107,7 +107,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                     }
                   }, */
                 )),
-            Container(
+/*             Container(
                 width: MediaQuery.of(context).size.width * 0.95,
                 padding: EdgeInsets.only(left: 20.0, right: 20.0),
                 child: DropdownButtonFormField(
@@ -118,14 +118,14 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                   onChanged: (val) => setState(() {
                     _costArea = val as String?;
                   }),
-                )),
+                )), */
             Container(
                 width: MediaQuery.of(context).size.width * 0.95,
                 margin: EdgeInsets.only(bottom: 10.0),
                 padding: EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   controller: _itemCategory,
-                  decoration: InputDecoration(labelText: 'Item category'),
+                  decoration: InputDecoration(labelText: 'Description'),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
 /*                   validator: (val) {
@@ -140,7 +140,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                 padding: EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   controller: _itemName,
-                  decoration: InputDecoration(labelText: 'Item name'),
+                  decoration: InputDecoration(labelText: 'Reference number'),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.sentences,
                   validator: (val) {
@@ -149,7 +149,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                     }
                   },
                 )),
-            Container(
+/*             Container(
               width: MediaQuery.of(context).size.width * 0.95,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -186,14 +186,14 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                   )
                 ],
               ),
-            ),
+            ), */
             Container(
                 width: MediaQuery.of(context).size.width * 0.95,
                 margin: EdgeInsets.only(bottom: 10.0),
                 padding: EdgeInsets.only(left: 20.0, right: 20.0),
                 child: TextFormField(
                   controller: _price,
-                  decoration: InputDecoration(labelText: 'Price'),
+                  decoration: InputDecoration(labelText: 'Amount'),
                   keyboardType: TextInputType.number,
                   validator: (val) {
                     if (val == null || val.isEmpty) {
