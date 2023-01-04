@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import '../db/sp_helper.dart';
 import '../pages/about.dart';
-import '../pages/analysis/overview.dart';
 import '../pages/inputs/business_info.dart';
 import '../pages/inputs/country.dart';
-import '../pages/users/user_list.dart';
+import '../pages/persons/person_details.dart';
 import '../styles/colors.dart';
-import '../utils/preprocessor.dart';
 import '../utils/router.dart';
+import 'dart:developer';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -18,20 +16,9 @@ class SideMenu extends StatefulWidget {
 
 class _SideMenuState extends State<SideMenu> {
   String? _currentUserName;
-  bool _isVisible = false;
+
   @override
   Widget build(BuildContext context) {
-    SharedPreferencesHelper().readData('currentUserData').then((val) {
-      if (val != null) {
-        setState(() {
-          _currentUserName = DataParser().strToMap(val)['name'];
-          String _currentUserRole = DataParser().strToMap(val)['role'];
-          if (_currentUserRole == 'owner' || _currentUserRole == 'admin') {
-            _isVisible = true;
-          }
-        });
-      }
-    });
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
       child: Drawer(
@@ -43,11 +30,11 @@ class _SideMenuState extends State<SideMenu> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Icon(
+                    /*  Icon(
                       Icons.person,
                       // color: Colors.white,
                       size: 50.0,
-                    ),
+                    ), */
                     Text(
                       _currentUserName ?? '',
                       style: TextStyle(
@@ -57,7 +44,7 @@ class _SideMenuState extends State<SideMenu> {
                     )
                   ],
                 )),
-            ListTile(
+/*             ListTile(
               leading: Icon(
                 Icons.bar_chart,
               ),
@@ -65,6 +52,16 @@ class _SideMenuState extends State<SideMenu> {
                 'Analysis',
               ),
               onTap: () => PageRouter().navigateToPage(AnalysisPage(), context),
+            ), */
+            ListTile(
+              leading: Icon(
+                Icons.group,
+              ),
+              title: Text(
+                'Customers',
+              ),
+              onTap: () =>
+                  PageRouter().navigateToPage(PersonDetailsPage(), context),
             ),
             ListTile(
               leading: Icon(
@@ -76,21 +73,6 @@ class _SideMenuState extends State<SideMenu> {
               onTap: () =>
                   PageRouter().navigateToPage(InputPersonPage(), context),
             ),
-            /* ListTile(
-              leading: Icon(
-                Icons.category,
-                color: myBlue,
-              ),
-              title: Text(
-                'Items',
-                style: TextStyle(color: myBlue),
-              ),
-              // onTap: () => PageRouter().navigateToPage(ItemsPage(), context),
-              onTap: () => showDialog(
-                  context: context, 
-                  builder: (_) => InfoDialog('Still under construction!'), 
-                  barrierDismissible: false),
-            ), */
             ListTile(
                 leading: Icon(
                   Icons.language,
@@ -109,19 +91,16 @@ class _SideMenuState extends State<SideMenu> {
               ),
               onTap: () => PageRouter().navigateToPage(AboutPage(), context),
             ),
-            Visibility(
-              visible: _isVisible,
-              child: ListTile(
-                leading: Icon(
-                  Icons.person_outline,
-                ),
-                title: Text(
-                  'Users',
-                ),
-                onTap: () =>
-                    PageRouter().navigateToPage(UserListPage(), context),
+            ListTile(
+              leading: Icon(
+                Icons.settings_outlined,
               ),
+              title: Text(
+                'Settings',
+              ),
+              onTap: () => log('Tapped settings button'),
             ),
+
             /* ListTile(
               leading: Icon(
                 Icons.logout,

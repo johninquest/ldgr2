@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../styles/colors.dart';
 import '../utils/router.dart';
 import '../shared/bottom_nav_bar.dart';
 import '../shared/dialogs.dart';
@@ -57,7 +58,8 @@ class HomePage extends StatelessWidget {
                     PageRouter().navigateToPage(AddExpensePage(), context),
                 child: Text(
                   'EXPENSE',
-                  style: TextStyle(fontSize: 20.0, letterSpacing: 1.0),
+                  style: TextStyle(
+                      fontSize: 20.0, letterSpacing: 1.0, color: blackColor),
                 ),
                 // style: ElevatedButton.styleFrom(backgroundColor: blackColor),
               ),
@@ -73,7 +75,10 @@ class HomePage extends StatelessWidget {
                   onPressed: () =>
                       PageRouter().navigateToPage(InputIncomePage(), context),
                   child: Text('INCOME',
-                      style: TextStyle(fontSize: 20.0, letterSpacing: 1.0)),
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          letterSpacing: 1.0,
+                          color: blackColor)),
                   style: ElevatedButton.styleFrom()),
             ),
             Container(
@@ -89,9 +94,7 @@ class HomePage extends StatelessWidget {
                       barrierDismissible: true), */
                 child: Text('STOCK',
                     style: TextStyle(
-                      fontSize: 20.0,
-                      letterSpacing: 1.0,
-                    )),
+                        fontSize: 20.0, letterSpacing: 1.0, color: blackColor)),
                 // style: ElevatedButton.styleFrom(backgroundColor: secondaryColor)
               ),
             ),

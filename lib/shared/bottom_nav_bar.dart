@@ -16,8 +16,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
       currentIndex: 0,
       type: BottomNavigationBarType.fixed,
       backgroundColor: primaryColor,
-      selectedItemColor: blackColor,
-      /* unselectedItemColor: blackColor,
+      /* selectedItemColor: blackColor,
+      unselectedItemColor: blackColor,
       selectedIconTheme: IconThemeData(color: Colors.black), */
       showSelectedLabels: false,
       showUnselectedLabels: false,
@@ -26,20 +26,23 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           icon: Icon(
             Icons.home_outlined,
+            color: blackColor,
           ),
           label: 'Home',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.add_box_outlined,
+            color: blackColor,
           ),
           label: 'Add',
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.list_alt_outlined,
+            color: blackColor,
           ),
-          label: 'Expense list',
+          label: 'List',
         ),
       ],
       onTap: (index) => afterTap(index),
@@ -57,9 +60,5 @@ class _BottomNavBarState extends State<BottomNavBar> {
     if (currentIndex == 2) {
       PageRouter().navigateToPage(EntryListPage(), context);
     }
-/*
-    else {
-      print('No where to go');
-    } */
   }
 }

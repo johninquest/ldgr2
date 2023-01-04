@@ -12,7 +12,7 @@ class InputIncomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'enter income',
+          'Enter income',
           style: TextStyle(color: primaryColorDarker),
         ),
         centerTitle: true,

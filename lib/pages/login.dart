@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import '../db/sp_helper.dart';
+/* import 'dart:convert';
+import '../db/sp_helper.dart'; */
 import '../shared/snackbar_messages.dart';
 import '../utils/router.dart';
 import '../styles/colors.dart';
@@ -148,27 +148,44 @@ class _LoginFormState extends State<LoginForm> {
                 endIndent: 50.0,
               ),
               Container(
+                width: MediaQuery.of(context).size.width * 0.55,
                 margin: EdgeInsets.only(top: 10.0),
-                child: ElevatedButton(
+                child: OutlinedButton.icon(
                   onPressed: () => SnackBarMessage().underConstruction(context),
-                  child: Text(
+                  label: Text(
                     'Continue with Google',
                     style: TextStyle(
                         wordSpacing: 3.0,
-                        letterSpacing: 0.3,
-                        color: blackColor),
+                        letterSpacing: 0.1,
+                        color: blackColor,
+                        fontSize: 13.0),
+                  ),
+                  /* icon: Icon(Icons.save), */
+                  icon: Image.asset(
+                    'assets/images/google_icon.png',
+                    height: 24.0,
+                    width: 24.0,
                   ),
                 ),
               ),
               Container(
-                child: ElevatedButton(
+                width: MediaQuery.of(context).size.width * 0.55,
+                margin: EdgeInsets.only(top: 10.0),
+                child: OutlinedButton.icon(
                   onPressed: () => SnackBarMessage().underConstruction(context),
-                  child: Text(
+                  label: Text(
                     'Continue with Facebook',
                     style: TextStyle(
                         wordSpacing: 3.0,
-                        letterSpacing: 0.3,
-                        color: blackColor),
+                        letterSpacing: 0.1,
+                        color: blackColor,
+                        fontSize: 13.0),
+                  ),
+                  /* icon: Icon(Icons.save), */
+                  icon: Image.asset(
+                    'assets/images/facebook_icon.png',
+                    height: 24.0,
+                    width: 24.0,
                   ),
                 ),
               ),
@@ -180,7 +197,7 @@ class _LoginFormState extends State<LoginForm> {
   }
 }
 
-storeCurrentUser(
+/* storeCurrentUser(
     String userName, String userRole, String bName, String bLocation) {
   Map _toMap = {
     'name': userName,
@@ -198,3 +215,4 @@ storeRememberMeUser(bool rmState, String? userId) {
     _spHelper.storeData('loginId', userId ?? '');
   }
 }
+ */

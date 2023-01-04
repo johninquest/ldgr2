@@ -19,7 +19,7 @@ class AddExpensePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('enter expense'),
+          title: Text('Enter expense'),
           centerTitle: true,
           // backgroundColor: myRed,
         ),

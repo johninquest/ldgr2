@@ -19,7 +19,7 @@ class EntryListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'expense list',
+          'Expense list',
           style: TextStyle(color: blackColor),
         ),
         centerTitle: true,

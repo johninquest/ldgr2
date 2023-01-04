@@ -483,3 +483,21 @@ class MyItemList {
         )),
   ];
 }
+
+List<DropdownMenuItem<String>> personsCategoryList = [
+  DropdownMenuItem(
+      value: '',
+      child: Container(
+        child: Text(''),
+      )),
+  DropdownMenuItem(
+      value: 'customer',
+      child: Container(
+        child: Text('Customer', style: DropdownListStyle),
+      )),
+  DropdownMenuItem(
+      value: 'supplier',
+      child: Container(
+        child: Text('Supplier', style: DropdownListStyle),
+      )),
+];
