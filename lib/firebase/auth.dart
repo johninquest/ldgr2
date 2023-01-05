@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 class FirebaseAuthService {
   final FirebaseAuth fbAuth = FirebaseAuth.instance;
 
-  loginUser(String _username, String _password) async {
+  emailSignIn(String _username, String _password) async {
     try {
       UserCredential authUser = await fbAuth.signInWithEmailAndPassword(
           email: _username, password: _password);

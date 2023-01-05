@@ -9,6 +9,7 @@ import '../../styles/style.dart';
 import '../records/search.dart';
 import 'input_expense.dart';
 import 'expense_detail.dart';
+import 'dart:developer';
 
 List? _fsDaybookList;
 
@@ -51,6 +52,7 @@ class ExpenseListPage extends StatelessWidget {
                 fsData: daybookData,
               );
             } else {
+              log('Problem => $snapshot');
               return WaitingForResponse();
             }
           }),
