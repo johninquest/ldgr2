@@ -3,6 +3,7 @@ import '../pages/about.dart';
 import '../pages/inputs/business_info.dart';
 import '../pages/inputs/country.dart';
 import '../pages/persons/person_details.dart';
+import '../pages/persons/persons_list.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
 import 'dart:developer';
@@ -61,7 +62,7 @@ class _SideMenuState extends State<SideMenu> {
                 'Customers',
               ),
               onTap: () =>
-                  PageRouter().navigateToPage(PersonDetailsPage(), context),
+                  PageRouter().navigateToPage(PersonsListPage(), context),
             ),
             ListTile(
               leading: Icon(

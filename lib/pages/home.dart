@@ -4,8 +4,9 @@ import '../utils/router.dart';
 import '../shared/bottom_nav_bar.dart';
 import '../shared/dialogs.dart';
 import '../shared/side_nav_bar.dart';
-import 'expense/add_expense.dart';
-import 'income/add_income.dart';
+import 'expense/expense_list.dart';
+import 'income/income_list.dart';
+import 'persons/persons_list.dart';
 import 'stock/overview.dart';
 
 class HomePage extends StatelessWidget {
@@ -55,9 +56,22 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 25.0),
               child: ElevatedButton(
                 onPressed: () =>
-                    PageRouter().navigateToPage(AddExpensePage(), context),
+                    PageRouter().navigateToPage(PersonsListPage(), context),
+                child: Text('CUSTOMERS',
+                    style: TextStyle(
+                        fontSize: 20.0, letterSpacing: 1.0, color: blackColor)),
+                /* style: ElevatedButton.styleFrom(backgroundColor: secondaryColor) */
+              ),
+            ),
+            Container(
+              height: 60.0,
+              width: MediaQuery.of(context).size.width * 0.5,
+              margin: EdgeInsets.only(bottom: 25.0),
+              child: ElevatedButton(
+                onPressed: () =>
+                    PageRouter().navigateToPage(ExpenseListPage(), context),
                 child: Text(
-                  'EXPENSE',
+                  'EXPENSES',
                   style: TextStyle(
                       fontSize: 20.0, letterSpacing: 1.0, color: blackColor),
                 ),
@@ -69,11 +83,8 @@ class HomePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.5,
               margin: EdgeInsets.only(bottom: 25.0),
               child: ElevatedButton(
-                  /*  onPressed: () => showDialog(
-                      context: context,
-                      builder: (_) => InfoDialog('coming soon'.toUpperCase())), */
                   onPressed: () =>
-                      PageRouter().navigateToPage(InputIncomePage(), context),
+                      PageRouter().navigateToPage(IncomeListPage(), context),
                   child: Text('INCOME',
                       style: TextStyle(
                           fontSize: 20.0,

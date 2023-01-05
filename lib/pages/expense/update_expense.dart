@@ -294,7 +294,8 @@ class _EntryEditorFormState extends State<EntryEditorForm> {
                             .updateDocument(_docId!, _fsUpdatePayload)
                             .then((val) {
                           SnackBarMessage().updateSuccess(context);
-                          PageRouter().navigateToPage(EntryListPage(), context);
+                          PageRouter()
+                              .navigateToPage(ExpenseListPage(), context);
                         }).catchError((e) =>
                                 SnackBarMessage().generalErrorMessage(context));
                         /* FirestoreService()

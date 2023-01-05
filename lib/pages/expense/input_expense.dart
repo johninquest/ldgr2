@@ -12,8 +12,8 @@ import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
 import 'expense_list.dart';
 
-class AddExpensePage extends StatelessWidget {
-  const AddExpensePage({Key? key}) : super(key: key);
+class InputExpensePage extends StatelessWidget {
+  const InputExpensePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -107,18 +107,6 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                     }
                   }, */
                 )),
-/*             Container(
-                width: MediaQuery.of(context).size.width * 0.95,
-                padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                child: DropdownButtonFormField(
-                  decoration: InputDecoration(labelText: 'Cost area'),
-                  items: MyItemList().costAreaList,
-                  validator: (val) =>
-                      val == null ? 'Please select cost area' : null,
-                  onChanged: (val) => setState(() {
-                    _costArea = val as String?;
-                  }),
-                )), */
             Container(
                 width: MediaQuery.of(context).size.width * 0.95,
                 margin: EdgeInsets.only(bottom: 10.0),
@@ -149,44 +137,6 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                     }
                   },
                 )),
-/*             Container(
-              width: MediaQuery.of(context).size.width * 0.95,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.55,
-                    margin: EdgeInsets.only(right: 8.0),
-                    padding: EdgeInsets.only(left: 20.0),
-                    child: TextFormField(
-                      controller: _quantity,
-                      decoration: InputDecoration(labelText: 'Quantity'),
-                      keyboardType: TextInputType.number,
-/*                       validator: (val) {
-                        if (val == null || val.isEmpty) {
-                          return 'Please enter quantity!';
-                        }
-                      }, */
-                    ),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.35,
-                    margin: EdgeInsets.only(left: 8.0, bottom: 5.0),
-                    padding: EdgeInsets.only(right: 20.0),
-                    child: DropdownButtonFormField(
-                      decoration: InputDecoration(labelText: 'Unit'),
-                      items: MyItemList().unitList,
-                      /* validator: (val) =>
-                          val == null ? 'Please select unit!' : null, */
-                      onChanged: (val) => setState(() {
-                        _unit = val as String?;
-                      }),
-                    ),
-                  )
-                ],
-              ),
-            ), */
             Container(
                 width: MediaQuery.of(context).size.width * 0.95,
                 margin: EdgeInsets.only(bottom: 10.0),
@@ -294,7 +244,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                               });
                             } else {
                               PageRouter()
-                                  .navigateToPage(EntryListPage(), context);
+                                  .navigateToPage(ExpenseListPage(), context);
                             }
                           } else if (val == 'permission-denied') {
                             String eMessage = 'Permission denied';
@@ -344,7 +294,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
-                PageRouter().navigateToPage(EntryListPage(), context);
+                PageRouter().navigateToPage(ExpenseListPage(), context);
               },
               child: Text(
                 'NO',
@@ -375,7 +325,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                     if (val == 'add-success') {
                       SnackBarMessage().customSuccessMessage(
                           'Added to stock successfully', context);
-                      PageRouter().navigateToPage(EntryListPage(), context);
+                      PageRouter().navigateToPage(ExpenseListPage(), context);
                     } else {
                       SnackBarMessage().generalErrorMessage(context);
                     }

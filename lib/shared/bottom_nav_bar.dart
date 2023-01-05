@@ -58,7 +58,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       print('Tapped add button');
     }
     if (currentIndex == 2) {
-      PageRouter().navigateToPage(EntryListPage(), context);
+      PageRouter().navigateToPage(ExpenseListPage(), context);
     }
   }
 }

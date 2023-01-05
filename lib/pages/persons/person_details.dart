@@ -14,7 +14,6 @@ class PersonDetailsPage extends StatelessWidget {
       body: Center(
         child: Text('Customer details page!'),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

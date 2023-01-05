@@ -38,17 +38,15 @@ class StockOverviewPage extends StatelessWidget {
             }
           }),
       bottomNavigationBar: BottomNavBar(),
-      floatingActionButton: Tooltip(
-          message: 'Add new item to stock',
-          child: IconButton(
-            icon: Icon(
-              Icons.add_circle,
-              /*  color: myBlueLighter, */
-              size: 40.0,
-            ),
-            onPressed: () =>
-                PageRouter().navigateToPage(AddToStockPage(), context),
-          )),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
+        tooltip: 'Enter new expense',
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () =>
+            PageRouter().navigateToPage(const AddToStockPage(), context),
+      ),
     );
   }
 }

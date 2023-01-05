@@ -54,8 +54,8 @@ class _LoginFormState extends State<LoginForm> {
             children: [
               Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  margin: EdgeInsets.only(bottom: 10.0, top: 40.0),
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                  margin: EdgeInsets.only(bottom: 8.0, top: 34.0),
+                  padding: EdgeInsets.only(left: 13.0, right: 13.0),
                   child: TextFormField(
                     controller: _userId,
                     decoration: InputDecoration(
@@ -72,8 +72,8 @@ class _LoginFormState extends State<LoginForm> {
                   )),
               Container(
                   width: MediaQuery.of(context).size.width * 0.90,
-                  margin: EdgeInsets.only(bottom: 20.0),
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0),
+                  margin: EdgeInsets.only(bottom: 13.0),
+                  padding: EdgeInsets.only(left: 13.0, right: 13.0),
                   child: TextFormField(
                     controller: _userPassword,
                     obscureText: true,
@@ -93,8 +93,8 @@ class _LoginFormState extends State<LoginForm> {
                     },
                   )),
               Container(
-                width: MediaQuery.of(context).size.width * 0.75,
-                margin: EdgeInsets.only(bottom: 20.0),
+                width: MediaQuery.of(context).size.width * 0.55,
+                margin: EdgeInsets.only(bottom: 5.0),
                 padding: EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Row(
                   children: [
@@ -115,7 +115,7 @@ class _LoginFormState extends State<LoginForm> {
               Container(
                 width: MediaQuery.of(context).size.width * 0.50,
                 margin: EdgeInsets.only(
-                    left: 10.0, right: 10.0, top: 10.0, bottom: 10.0),
+                    left: 10.0, right: 10.0, top: 5.0, bottom: 10.0),
                 child: ElevatedButton(
                   /* onPressed: () {
                     String userNameCleanedUp =
@@ -132,10 +132,10 @@ class _LoginFormState extends State<LoginForm> {
                   child: Text(
                     'Log in',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        wordSpacing: 3.0,
-                        letterSpacing: 0.3,
-                        fontSize: 16.0),
+                      fontWeight: FontWeight.bold,
+                      wordSpacing: 3.0,
+                      letterSpacing: 0.3,
+                    ),
                   ),
                   /* style: ElevatedButton.styleFrom(
                     backgroundColor: myBlue,
@@ -148,17 +148,17 @@ class _LoginFormState extends State<LoginForm> {
                 endIndent: 50.0,
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.55,
+                width: MediaQuery.of(context).size.width * 0.8,
                 margin: EdgeInsets.only(top: 10.0),
                 child: OutlinedButton.icon(
                   onPressed: () => SnackBarMessage().underConstruction(context),
                   label: Text(
                     'Continue with Google',
                     style: TextStyle(
-                        wordSpacing: 3.0,
-                        letterSpacing: 0.1,
-                        color: blackColor,
-                        fontSize: 13.0),
+                      wordSpacing: 3.0,
+                      letterSpacing: 0.1,
+                      color: blackColor,
+                    ),
                   ),
                   /* icon: Icon(Icons.save), */
                   icon: Image.asset(
@@ -169,17 +169,17 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width * 0.55,
+                width: MediaQuery.of(context).size.width * 0.8,
                 margin: EdgeInsets.only(top: 10.0),
                 child: OutlinedButton.icon(
                   onPressed: () => SnackBarMessage().underConstruction(context),
                   label: Text(
                     'Continue with Facebook',
                     style: TextStyle(
-                        wordSpacing: 3.0,
-                        letterSpacing: 0.1,
-                        color: blackColor,
-                        fontSize: 13.0),
+                      wordSpacing: 3.0,
+                      letterSpacing: 0.1,
+                      color: blackColor,
+                    ),
                   ),
                   /* icon: Icon(Icons.save), */
                   icon: Image.asset(

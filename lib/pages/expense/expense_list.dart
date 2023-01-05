@@ -7,12 +7,13 @@ import '../../shared/bottom_nav_bar.dart';
 import '../../shared/custom_widgets.dart';
 import '../../styles/style.dart';
 import '../records/search.dart';
+import 'input_expense.dart';
 import 'expense_detail.dart';
 
 List? _fsDaybookList;
 
-class EntryListPage extends StatelessWidget {
-  const EntryListPage({Key? key}) : super(key: key);
+class ExpenseListPage extends StatelessWidget {
+  const ExpenseListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +54,15 @@ class EntryListPage extends StatelessWidget {
               return WaitingForResponse();
             }
           }),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: primaryColor,
+        tooltip: 'Enter new expense',
+        child: Icon(
+          Icons.add,
+        ),
+        onPressed: () =>
+            PageRouter().navigateToPage(const InputExpensePage(), context),
+      ),
       bottomNavigationBar: BottomNavBar(),
     );
   }

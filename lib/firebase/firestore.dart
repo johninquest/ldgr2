@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:developer';
 
 class FirestoreService {
   FirebaseFirestore fsInstance = FirebaseFirestore.instance;
@@ -23,11 +24,14 @@ class FirestoreService {
         .doc(mainDocName)
         .collection(subColName);
     try {
-      QuerySnapshot snapshot =
-          await _collection.orderBy('picked_date', descending: true).get();
+      QuerySnapshot snapshot = await _collection
+          .orderBy('picked_date', descending: true)
+          .limit(100)
+          .get();
       List<dynamic> fsReponse = snapshot.docs.map((doc) => doc.data()).toList();
       return fsReponse;
     } catch (e) {
+      log('Returned error => $e');
       return null;
     }
   }

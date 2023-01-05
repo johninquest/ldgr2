@@ -190,7 +190,7 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
                   String _docId = widget.rowData['doc_id'];
                   FirestoreService().removeDocument(_docId).then((val) {
                     SnackBarMessage().deleteSuccess(context);
-                    PageRouter().navigateToPage(EntryListPage(), context);
+                    PageRouter().navigateToPage(ExpenseListPage(), context);
                   }).catchError(
                       (e) => SnackBarMessage().generalErrorMessage(context));
                 },
