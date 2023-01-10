@@ -1,13 +1,8 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
-/* import 'dart:convert';
-import '../db/sp_helper.dart'; */
+import '../firebase/auth.dart';
 import '../shared/snackbar_messages.dart';
-import '../utils/router.dart';
 import '../styles/colors.dart';
-import 'home.dart';
-/* import '../shared/dialogs.dart'; 
-import '../utils/auth.dart';
-import '../firebase/firestore.dart'; */
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -38,8 +33,8 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final _loginFormKey = GlobalKey<FormState>();
-  TextEditingController _userId = TextEditingController();
-  TextEditingController _userPassword = TextEditingController();
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
   bool? isChecked = false;
 
   @override
@@ -57,7 +52,7 @@ class _LoginFormState extends State<LoginForm> {
                   margin: EdgeInsets.only(bottom: 8.0, top: 34.0),
                   padding: EdgeInsets.only(left: 13.0, right: 13.0),
                   child: TextFormField(
-                    controller: _userId,
+                    controller: _email,
                     decoration: InputDecoration(
                         labelText: 'Email',
                         enabledBorder: OutlineInputBorder(
@@ -66,8 +61,9 @@ class _LoginFormState extends State<LoginForm> {
                     keyboardType: TextInputType.text,
                     validator: (val) {
                       if (val == null || val.isEmpty) {
-                        return 'Please enter e-mail';
+                        return 'Email required';
                       }
+                      return null;
                     },
                   )),
               Container(
@@ -75,7 +71,7 @@ class _LoginFormState extends State<LoginForm> {
                   margin: EdgeInsets.only(bottom: 13.0),
                   padding: EdgeInsets.only(left: 13.0, right: 13.0),
                   child: TextFormField(
-                    controller: _userPassword,
+                    controller: _password,
                     obscureText: true,
                     enableSuggestions: false,
                     autocorrect: false,
@@ -88,7 +84,7 @@ class _LoginFormState extends State<LoginForm> {
                     enabled: true,
                     validator: (val) {
                       if (val == null || val.isEmpty) {
-                        return 'Please enter password';
+                        return 'Password required!';
                       }
                     },
                   )),
@@ -117,18 +113,19 @@ class _LoginFormState extends State<LoginForm> {
                 margin: EdgeInsets.only(
                     left: 10.0, right: 10.0, top: 5.0, bottom: 10.0),
                 child: ElevatedButton(
-                  /* onPressed: () {
-                    String userNameCleanedUp =
-                        _userName.text.trim().toLowerCase();
-                    String userPasswordCleanedUp =
-                        _userPassword.text.trim().toLowerCase();
+                  onPressed: () {
+                    String emailCleanedUp = _email.text.trim().toLowerCase();
+                    String passwordCleanedUp =
+                        _password.text.trim().toLowerCase();
                     if (_loginFormKey.currentState!.validate()) {
-                      _authenticateUser(
-                          userNameCleanedUp, userPasswordCleanedUp);
+                      // _authenticateUser(emailCleanedUp, passwordCleanedUp);
+                      FirebaseAuthService().emailSignIn(
+                          emailCleanedUp, passwordCleanedUp, context);
+                      // log('User => $fbAuthResponse');
                     }
-                  }, */
-                  onPressed: (() =>
-                      PageRouter().navigateToPage(HomePage(), context)),
+                  },
+                  /*  onPressed: (() =>
+                      PageRouter().navigateToPage(HomePage(), context)), */
                   child: Text(
                     'Log in',
                     style: TextStyle(
@@ -195,6 +192,13 @@ class _LoginFormState extends State<LoginForm> {
       ),
     );
   }
+
+/*   _authenticateUser(String email, String password) {
+    print('Tapped login button!');
+    var fbAuth = FirebaseAuthService();
+    var authResp = fbAuth.emailSignIn(email, password, context);
+    print('Res 2 => $authResp');
+  } */
 }
 
 /* storeCurrentUser(

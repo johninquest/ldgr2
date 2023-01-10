@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '../db/sp_helper.dart';
-import '../pages/login.dart';
-import '../utils/router.dart';
+import 'package:ldgr2/firebase/auth.dart';
+import 'package:ldgr2/pages/auth_gate.dart';
 import '../styles/colors.dart';
+import '../utils/router.dart';
 
 class InfoDialog extends StatelessWidget {
   // const InfoDialog({ Key? key }) : super(key: key);
@@ -109,13 +108,10 @@ class LogoutDialog extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  final _spHelper = SharedPreferencesHelper();
-                  _spHelper.removeData('loginId');
-                  _spHelper.removeData('currentUserData').then((_) {
-                    PageRouter().navigateToPage(LoginPage(), context);
-                  });
-
-                  // PageRouter().navigateToPage(LoginPage(), context);
+                  var fbAuth = FirebaseAuthService();
+                  fbAuth.logoutUser();
+                  PageRouter().navigateToPage(AuthGate(), context);
+                  // AuthGate();
                 },
                 child: Text(
                   'YES',

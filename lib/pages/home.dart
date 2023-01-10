@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../firebase/auth.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
 import '../shared/bottom_nav_bar.dart';

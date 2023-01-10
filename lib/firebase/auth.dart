@@ -1,23 +1,44 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:ldgr2/pages/home.dart';
+import 'package:ldgr2/shared/snackbar_messages.dart';
+
+import 'package:ldgr2/utils/router.dart';
 
 class FirebaseAuthService {
   final FirebaseAuth fbAuth = FirebaseAuth.instance;
 
-  emailSignIn(String _username, String _password) async {
+  emailSignIn(
+      String userEmail, String userPassword, BuildContext context) async {
     try {
       UserCredential authUser = await fbAuth.signInWithEmailAndPassword(
-          email: _username, password: _password);
-      return authUser.user;
+          email: userEmail, password: userPassword);
+      /*  log('AuthObj => $authUser');
+      log('AuthObj => ${authUser.runtimeType}');
+      log('Auth user => ${authUser.user.runtimeType}'); */
+      if (authUser.runtimeType == UserCredential) {
+        PageRouter().navigateToPage(HomePage(), context);
+      }
+      return authUser;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        // print('No user found for that email.');
-        return null;
+        // print('User not found');
+        return SnackBarMessage().customErrorMessage('User not found!', context);
+        // return null;
       } else if (e.code == 'wrong-password') {
-        // print('Wrong password provided for that user.');
-        return null;
+        // print('Wrong password');
+        return SnackBarMessage().customErrorMessage('Wrong password!', context);
+        // return null;
+      } else if (e.code == 'invalid-email') {
+        // print('Invalid email');
+        return SnackBarMessage().customErrorMessage('Invalid email!', context);
+        // return null;
       }
     }
   }
+
+  facebookSignIn() {}
+  googleSignIn() {}
 
   logoutUser() async {
     await fbAuth.signOut();
@@ -26,9 +47,9 @@ class FirebaseAuthService {
   checkAuthStatus() {
     fbAuth.authStateChanges().listen((User? user) {
       if (user == null) {
-        print('User is currently signed out!');
+        print('User has not been authenticated!');
       } else {
-        print('User is signed in!');
+        print('User has been authenticated!');
       }
     });
   }
