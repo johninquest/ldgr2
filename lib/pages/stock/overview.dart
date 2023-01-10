@@ -34,13 +34,22 @@ class StockOverviewPage extends StatelessWidget {
               List resData = snapshot.data as List;
               return StockOverviewData(stockData: resData);
             } else {
-              return WaitingForResponse();
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  WaitingForResponse(),
+                  SizedBox(
+                    height: 13.0,
+                  ),
+                  Text('A problem has occured!'),
+                ],
+              );
             }
           }),
       bottomNavigationBar: BottomNavBar(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
-        tooltip: 'Enter new expense',
+        tooltip: 'Add new item to stock',
         child: Icon(
           Icons.add,
         ),

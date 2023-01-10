@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../pages/about.dart';
 import '../pages/inputs/business_info.dart';
 import '../pages/inputs/country.dart';
-import '../pages/persons/person_details.dart';
 import '../pages/persons/persons_list.dart';
+import '../pages/taxes/tax_list.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
 import 'dart:developer';
@@ -56,10 +56,10 @@ class _SideMenuState extends State<SideMenu> {
             ), */
             ListTile(
               leading: Icon(
-                Icons.group,
+                Icons.group_outlined,
               ),
               title: Text(
-                'Customers',
+                'Persons',
               ),
               onTap: () =>
                   PageRouter().navigateToPage(PersonsListPage(), context),
@@ -83,6 +83,15 @@ class _SideMenuState extends State<SideMenu> {
                 ),
                 onTap: () =>
                     PageRouter().navigateToPage(CountryPage(), context)),
+            ListTile(
+              leading: Icon(
+                Icons.calculate_outlined,
+              ),
+              title: Text(
+                'Taxes',
+              ),
+              onTap: () => PageRouter().navigateToPage(TaxListPage(), context),
+            ),
             ListTile(
               leading: Icon(
                 Icons.info_outline,

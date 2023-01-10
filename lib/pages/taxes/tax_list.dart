@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
 import '../../shared/bottom_nav_bar.dart';
 import '../../styles/colors.dart';
-import '../../utils/router.dart';
-import 'add_person.dart';
+import 'dart:developer';
 
-class PersonsListPage extends StatelessWidget {
-  const PersonsListPage({Key? key}) : super(key: key);
+class TaxListPage extends StatelessWidget {
+  const TaxListPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Persons'),
+        title: Text('Tax list'),
         centerTitle: true,
       ),
       body: Center(
-        child: Text('List of persons page!'),
+        child: Text('List of tax categories'),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
-        tooltip: 'Enter new person',
+        tooltip: 'Enter new tax category',
         child: Icon(
           Icons.add,
         ),
-        onPressed: () =>
-            PageRouter().navigateToPage(const AddPersonPage(), context),
+        onPressed: () => log('Tapped add tax button!'),
       ),
       bottomNavigationBar: BottomNavBar(),
     );

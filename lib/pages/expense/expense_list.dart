@@ -52,8 +52,16 @@ class ExpenseListPage extends StatelessWidget {
                 fsData: daybookData,
               );
             } else {
-              log('Problem => $snapshot');
-              return WaitingForResponse();
+              // log('Problem => $snapshot');
+              return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    WaitingForResponse(),
+                    SizedBox(
+                      height: 13.0,
+                    ),
+                    Text('A problem has occured!'),
+                  ]);
             }
           }),
       floatingActionButton: FloatingActionButton(

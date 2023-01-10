@@ -34,17 +34,15 @@ class UserListPage extends StatelessWidget {
             }
           }),
       bottomNavigationBar: BottomNavBar(),
-      floatingActionButton: Tooltip(
-          message: 'Add new user',
-          child: IconButton(
-            icon: Icon(
-              Icons.add_circle,
-              color: myTeal,
-              size: 40.0,
-            ),
-            onPressed: () =>
-                PageRouter().navigateToPage(AddUserPage(), context),
-          )),
+      floatingActionButton: IconButton(
+        tooltip: 'Add new user',
+        icon: Icon(
+          Icons.add_circle,
+          color: myTeal,
+          size: 40.0,
+        ),
+        onPressed: () => PageRouter().navigateToPage(AddUserPage(), context),
+      ),
     );
   }
 }

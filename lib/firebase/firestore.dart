@@ -31,7 +31,7 @@ class FirestoreService {
       List<dynamic> fsReponse = snapshot.docs.map((doc) => doc.data()).toList();
       return fsReponse;
     } catch (e) {
-      log('Returned error => $e');
+      // log('Returned error => $e');
       return null;
     }
   }

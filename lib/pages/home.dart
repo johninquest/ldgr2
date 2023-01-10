@@ -56,19 +56,6 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 25.0),
               child: ElevatedButton(
                 onPressed: () =>
-                    PageRouter().navigateToPage(PersonsListPage(), context),
-                child: Text('CUSTOMERS',
-                    style: TextStyle(
-                        fontSize: 20.0, letterSpacing: 1.0, color: blackColor)),
-                /* style: ElevatedButton.styleFrom(backgroundColor: secondaryColor) */
-              ),
-            ),
-            Container(
-              height: 60.0,
-              width: MediaQuery.of(context).size.width * 0.5,
-              margin: EdgeInsets.only(bottom: 25.0),
-              child: ElevatedButton(
-                onPressed: () =>
                     PageRouter().navigateToPage(ExpenseListPage(), context),
                 child: Text(
                   'EXPENSES',
@@ -91,6 +78,18 @@ class HomePage extends StatelessWidget {
                           letterSpacing: 1.0,
                           color: blackColor)),
                   style: ElevatedButton.styleFrom()),
+            ),
+            Container(
+              height: 60.0,
+              width: MediaQuery.of(context).size.width * 0.5,
+              margin: EdgeInsets.only(bottom: 25.0),
+              child: ElevatedButton(
+                onPressed: () =>
+                    PageRouter().navigateToPage(PersonsListPage(), context),
+                child: Text('PERSONS',
+                    style: TextStyle(
+                        fontSize: 20.0, letterSpacing: 1.0, color: blackColor)),
+              ),
             ),
             Container(
               height: 60.0,
