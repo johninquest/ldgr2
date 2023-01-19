@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../pages/about.dart';
 import '../pages/inputs/business_info.dart';
 import '../pages/inputs/country.dart';
-import '../pages/persons/persons_list.dart';
+import '../pages/contacts/contacts_list.dart';
 import '../pages/taxes/tax_list.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
@@ -56,13 +56,13 @@ class _SideMenuState extends State<SideMenu> {
             ), */
             ListTile(
               leading: Icon(
-                Icons.group_outlined,
+                Icons.contacts,
               ),
               title: Text(
-                'Persons',
+                'Contacts',
               ),
               onTap: () =>
-                  PageRouter().navigateToPage(PersonsListPage(), context),
+                  PageRouter().navigateToPage(ContactsListPage(), context),
             ),
             ListTile(
               leading: Icon(
@@ -85,7 +85,7 @@ class _SideMenuState extends State<SideMenu> {
                     PageRouter().navigateToPage(CountryPage(), context)),
             ListTile(
               leading: Icon(
-                Icons.calculate_outlined,
+                Icons.calculate,
               ),
               title: Text(
                 'Taxes',
@@ -94,7 +94,7 @@ class _SideMenuState extends State<SideMenu> {
             ),
             ListTile(
               leading: Icon(
-                Icons.info_outline,
+                Icons.info,
               ),
               title: Text(
                 'Info',
@@ -103,7 +103,7 @@ class _SideMenuState extends State<SideMenu> {
             ),
             ListTile(
               leading: Icon(
-                Icons.settings_outlined,
+                Icons.settings,
               ),
               title: Text(
                 'Settings',

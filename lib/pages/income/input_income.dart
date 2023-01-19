@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../shared/lists.dart';
 import '../../styles/colors.dart';
+import '../../styles/style.dart';
 import '../../utils/formatter.dart';
 
 class InputIncomePage extends StatelessWidget {
@@ -12,8 +12,8 @@ class InputIncomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Enter income',
-          style: TextStyle(color: primaryColorDarker),
+          'enter income'.toUpperCase(),
+          style: AppBarTitleStyle,
         ),
         centerTitle: true,
         // backgroundColor: myTeal,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ldgr2/styles/style.dart';
 import '../../db/sp_helper.dart';
 import '../../firebase/firestore.dart';
 import '../../utils/date_time_helper.dart';
@@ -21,7 +22,10 @@ class StockOverviewPage extends StatelessWidget {
     var _fsQuery = FirestoreService().getSubCollection('records', 'stock');
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stock list'),
+        title: Text(
+          'stock list'.toUpperCase(),
+          style: AppBarTitleStyle,
+        ),
         centerTitle: true,
       ),
       body: FutureBuilder(

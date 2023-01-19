@@ -3,6 +3,8 @@ import '../../shared/bottom_nav_bar.dart';
 import '../../styles/colors.dart';
 import 'dart:developer';
 
+import '../../styles/style.dart';
+
 class TaxListPage extends StatelessWidget {
   const TaxListPage({Key? key}) : super(key: key);
 
@@ -10,7 +12,10 @@ class TaxListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Tax list'),
+        title: Text(
+          'tax list'.toUpperCase(),
+          style: AppBarTitleStyle,
+        ),
         centerTitle: true,
       ),
       body: Center(

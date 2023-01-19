@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:objectid/objectid.dart';
 import '../../db/sp_helper.dart';
 import '../../firebase/firestore.dart';
+import '../../styles/style.dart';
 import '../../utils/date_time_helper.dart';
 import '../../utils/formatter.dart';
 import '../../utils/preprocessor.dart';
@@ -9,7 +10,7 @@ import '../../utils/router.dart';
 import '../../shared/lists.dart';
 import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
-import 'overview.dart';
+import 'stock_list.dart';
 
 class AddToStockPage extends StatefulWidget {
   const AddToStockPage({Key? key}) : super(key: key);
@@ -57,7 +58,10 @@ class _AddToStockPageState extends State<AddToStockPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add new item to stock'),
+        title: Text(
+          'new stock item'.toUpperCase(),
+          style: AppBarTitleStyle,
+        ),
         centerTitle: true,
       ),
       body: Center(

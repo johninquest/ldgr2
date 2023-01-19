@@ -15,7 +15,7 @@ class AboutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'about',
+          'about'.toUpperCase(),
           style: AppBarTitleStyle,
         ),
         centerTitle: true,
@@ -44,6 +44,8 @@ class AboutPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(
                   left: 10.0, right: 10.0, bottom: 50.0, top: 10.0),
+              padding: EdgeInsets.all(3.0),
+              alignment: Alignment.center,
               child: Text(
                 'A lightweight, single-entry bookkeeping app for your small business',
                 textAlign: TextAlign.center,
@@ -74,7 +76,7 @@ class AboutPage extends StatelessWidget {
                   ))),
                 ),
                 SizedBox(
-                  height: 13.0,
+                  height: 21.0,
                 ),
                 AppInfo(),
               ],

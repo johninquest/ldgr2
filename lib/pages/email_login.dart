@@ -1,7 +1,5 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import '../firebase/auth.dart';
-import '../shared/snackbar_messages.dart';
 import '../styles/colors.dart';
 
 class LoginPage extends StatelessWidget {
@@ -11,13 +9,13 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ldgr',
+        title: Text('',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               letterSpacing: 3.0,
             )),
         centerTitle: true,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
       ),
       body: LoginForm(),
     );
@@ -139,7 +137,7 @@ class _LoginFormState extends State<LoginForm> {
                   ), */
                 ),
               ),
-              Divider(
+              /*     Divider(
                 thickness: 0.5,
                 indent: 50.0,
                 endIndent: 50.0,
@@ -185,7 +183,7 @@ class _LoginFormState extends State<LoginForm> {
                     width: 24.0,
                   ),
                 ),
-              ),
+              ), */
             ],
           ),
         ),

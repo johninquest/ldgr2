@@ -9,7 +9,6 @@ import '../../styles/style.dart';
 import '../records/search.dart';
 import 'input_expense.dart';
 import 'expense_detail.dart';
-import 'dart:developer';
 
 List? _fsDaybookList;
 
@@ -21,8 +20,8 @@ class ExpenseListPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Expense list',
-          style: TextStyle(color: blackColor),
+          'expense list'.toUpperCase(),
+          style: AppBarTitleStyle,
         ),
         centerTitle: true,
         actions: [

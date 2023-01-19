@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../shared/bottom_nav_bar.dart';
 import '../../styles/colors.dart';
+import '../../styles/style.dart';
 import '../../utils/router.dart';
 import 'input_income.dart';
 
@@ -11,7 +12,10 @@ class IncomeListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Income list'),
+        title: Text(
+          'income list'.toUpperCase(),
+          style: AppBarTitleStyle,
+        ),
         centerTitle: true,
       ),
       body: Center(

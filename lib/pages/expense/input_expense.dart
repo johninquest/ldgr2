@@ -3,6 +3,7 @@ import 'package:objectid/objectid.dart';
 import 'dart:async';
 import '../../db/sp_helper.dart';
 import '../../firebase/firestore.dart';
+import '../../styles/style.dart';
 import '../../utils/date_time_helper.dart';
 import '../../utils/formatter.dart';
 import '../../utils/preprocessor.dart';
@@ -19,7 +20,10 @@ class InputExpensePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Enter expense'),
+          title: Text(
+            'enter expense'.toUpperCase(),
+            style: AppBarTitleStyle,
+          ),
           centerTitle: true,
           // backgroundColor: myRed,
         ),

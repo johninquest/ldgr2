@@ -111,7 +111,6 @@ class LogoutDialog extends StatelessWidget {
                   var fbAuth = FirebaseAuthService();
                   fbAuth.logoutUser();
                   PageRouter().navigateToPage(AuthGate(), context);
-                  // AuthGate();
                 },
                 child: Text(
                   'YES',
