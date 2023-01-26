@@ -20,3 +20,18 @@ class AddContactPage extends StatelessWidget {
     );
   }
 }
+
+class AddContactForm extends StatefulWidget {
+  const AddContactForm({Key? key}) : super(key: key);
+
+  @override
+  State<AddContactForm> createState() => _AddContactFormState();
+}
+
+class _AddContactFormState extends State<AddContactForm> {
+  final _addContactFormKey = GlobalKey<FormState>();
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

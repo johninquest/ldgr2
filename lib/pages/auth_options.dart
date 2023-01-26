@@ -3,6 +3,7 @@ import '../shared/snackbar_messages.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
 import 'email_login.dart';
+import 'home.dart';
 
 class AuthOptionsPage extends StatelessWidget {
   const AuthOptionsPage({Key? key}) : super(key: key);
@@ -91,6 +92,21 @@ class AuthOptionsPage extends StatelessWidget {
                 ),
               ),
               icon: Icon(Icons.mail_outline),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.8,
+            margin: EdgeInsets.only(top: 10.0),
+            child: OutlinedButton(
+              onPressed: () => PageRouter().navigateToPage(HomePage(), context),
+              child: Text(
+                'Offline',
+                style: TextStyle(
+                  wordSpacing: 3.0,
+                  letterSpacing: 0.1,
+                  color: blackColor,
+                ),
+              ),
             ),
           ),
         ],

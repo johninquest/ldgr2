@@ -204,6 +204,29 @@ class MyItemList {
         )),
   ];
 
+  List<DropdownMenuItem<String>> contactCategoryList = [
+    DropdownMenuItem(
+        value: '',
+        child: Container(
+          child: Text(''),
+        )),
+    DropdownMenuItem(
+        value: 'customer',
+        child: Container(
+          child: Text('Customer', style: DropdownListStyle),
+        )),
+    DropdownMenuItem(
+        value: 'owner',
+        child: Container(
+          child: Text('Owner', style: DropdownListStyle),
+        )),
+    DropdownMenuItem(
+        value: 'suupplier',
+        child: Container(
+          child: Text('Supplier', style: DropdownListStyle),
+        )),
+  ];
+
   List<DropdownMenuItem<String>> countryList = [
     DropdownMenuItem(
         value: 'none',
@@ -309,6 +332,11 @@ class MyItemList {
         value: 'ethiopia',
         child: Container(
           child: Text('Ethiopia', style: DropdownListStyle),
+        )),
+    DropdownMenuItem(
+        value: 'eu',
+        child: Container(
+          child: Text('European Union', style: DropdownListStyle),
         )),
     DropdownMenuItem(
         value: 'gabon',
@@ -466,9 +494,14 @@ class MyItemList {
           child: Text('Tunisia', style: DropdownListStyle),
         )),
     DropdownMenuItem(
-        value: 'uganda',
+        value: 'uk',
         child: Container(
-          child: Text('Uganda', style: DropdownListStyle),
+          child: Text('United Kingdom', style: DropdownListStyle),
+        )),
+    DropdownMenuItem(
+        value: 'usa',
+        child: Container(
+          child: Text('United States', style: DropdownListStyle),
         )),
     DropdownMenuItem(
         value: 'zambia',

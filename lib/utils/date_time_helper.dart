@@ -71,5 +71,14 @@ class DateTimeHelper {
       return '--/--/---- --:--';
     }
   }
-}
 
+  toIsoDateString(DateTime? ts) {
+    if (ts != null) {
+      DateFormat toDateFormat = DateFormat('yyyy-MM-dd');
+      String formatted = toDateFormat.format(ts);
+      return formatted;
+    } else {
+      return '----------';
+    }
+  }
+}

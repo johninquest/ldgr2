@@ -5,7 +5,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:open_file/open_file.dart';
 import '../db/sp_helper.dart';
 import '../shared/snackbar_messages.dart';
-import 'currency.dart';
+import 'currency_list.dart';
 import 'preprocessor.dart';
 
 class PrintService {

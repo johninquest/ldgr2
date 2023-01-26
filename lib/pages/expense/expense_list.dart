@@ -7,7 +7,7 @@ import '../../shared/bottom_nav_bar.dart';
 import '../../shared/custom_widgets.dart';
 import '../../styles/style.dart';
 import '../records/search.dart';
-import 'input_expense.dart';
+import 'add_expense.dart';
 import 'expense_detail.dart';
 
 List? _fsDaybookList;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ldgr2/pages/settings.dart';
 import '../pages/about.dart';
 import '../pages/inputs/business_info.dart';
 import '../pages/inputs/country.dart';
@@ -45,15 +46,7 @@ class _SideMenuState extends State<SideMenu> {
                     )
                   ],
                 )),
-/*             ListTile(
-              leading: Icon(
-                Icons.bar_chart,
-              ),
-              title: Text(
-                'Analysis',
-              ),
-              onTap: () => PageRouter().navigateToPage(AnalysisPage(), context),
-            ), */
+/* 
             ListTile(
               leading: Icon(
                 Icons.contacts,
@@ -63,7 +56,7 @@ class _SideMenuState extends State<SideMenu> {
               ),
               onTap: () =>
                   PageRouter().navigateToPage(ContactsListPage(), context),
-            ),
+            ), */
             ListTile(
               leading: Icon(
                 Icons.business,
@@ -79,7 +72,7 @@ class _SideMenuState extends State<SideMenu> {
                   Icons.language,
                 ),
                 title: Text(
-                  'Country',
+                  'Currency',
                 ),
                 onTap: () =>
                     PageRouter().navigateToPage(CountryPage(), context)),
@@ -108,7 +101,7 @@ class _SideMenuState extends State<SideMenu> {
               title: Text(
                 'Settings',
               ),
-              onTap: () => log('Tapped settings button'),
+              onTap: () => PageRouter().navigateToPage(SettingsPage(), context),
             ),
 
             /* ListTile(

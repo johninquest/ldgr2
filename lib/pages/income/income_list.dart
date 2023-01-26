@@ -3,7 +3,7 @@ import '../../shared/bottom_nav_bar.dart';
 import '../../styles/colors.dart';
 import '../../styles/style.dart';
 import '../../utils/router.dart';
-import 'input_income.dart';
+import 'add_income.dart';
 
 class IncomeListPage extends StatelessWidget {
   const IncomeListPage({Key? key}) : super(key: key);

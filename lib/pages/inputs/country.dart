@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../db/sp_helper.dart';
 import '../../shared/bottom_nav_bar.dart';
 import '../../shared/lists.dart';
 import '../../shared/snackbar_messages.dart';
-import '../../utils/currency.dart';
+import '../../styles/style.dart';
+import '../../utils/currency_list.dart';
 
 class CountryPage extends StatefulWidget {
   const CountryPage({Key? key}) : super(key: key);
@@ -37,7 +37,10 @@ class _CountryPageState extends State<CountryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('select country'),
+        title: Text(
+          'select country'.toUpperCase(),
+          style: AppBarTitleStyle,
+        ),
         centerTitle: true,
       ),
       body: Container(

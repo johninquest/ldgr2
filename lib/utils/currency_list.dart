@@ -39,6 +39,8 @@ class CurrencyHandler {
         return 'ETB';
       case 'eswatini':
         return 'SZL';
+      case 'eu':
+        return 'EUR';
       case 'ghana':
         return 'GHS';
       case 'gambia':
@@ -87,6 +89,10 @@ class CurrencyHandler {
         return 'UGX';
       case 'zambia':
         return 'ZMW';
+      case 'uk':
+        return 'GBP';
+      case 'usa':
+        return 'USD';
       default:
         return '';
     }

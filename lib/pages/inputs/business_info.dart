@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
 import '../../db/sp_helper.dart';
 import '../../shared/bottom_nav_bar.dart';
 import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
+import '../../styles/style.dart';
 import '../../utils/preprocessor.dart';
 import '../../utils/printing.dart';
+import 'dart:convert';
 
 class InputPersonPage extends StatelessWidget {
   const InputPersonPage({Key? key}) : super(key: key);
@@ -14,7 +15,10 @@ class InputPersonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('business info'),
+        title: Text(
+          'business info'.toUpperCase(),
+          style: AppBarTitleStyle,
+        ),
         centerTitle: true,
       ),
       body: Container(

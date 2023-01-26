@@ -4,7 +4,7 @@ import '../../firebase/firestore.dart';
 import '../../shared/bottom_nav_bar.dart';
 import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
-import '../../utils/currency.dart';
+import '../../utils/currency_list.dart';
 import '../../utils/formatter.dart';
 import '../../utils/preprocessor.dart';
 import '../../utils/router.dart';

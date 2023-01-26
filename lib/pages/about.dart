@@ -76,7 +76,7 @@ class AboutPage extends StatelessWidget {
                   ))),
                 ),
                 SizedBox(
-                  height: 21.0,
+                  height: 34.0,
                 ),
                 AppInfo(),
               ],

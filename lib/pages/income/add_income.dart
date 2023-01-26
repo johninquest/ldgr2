@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../shared/lists.dart';
 import '../../styles/colors.dart';
 import '../../styles/style.dart';
+import '../../utils/date_time_helper.dart';
 import '../../utils/formatter.dart';
 
 class InputIncomePage extends StatelessWidget {
@@ -36,8 +37,6 @@ class _IncomeFormState extends State<IncomeForm> {
   final _incomeFormKey = GlobalKey<FormState>();
   TextEditingController _pickedDate = TextEditingController();
 
-/*   String? _costArea;
-  String? incomeSource; */
   String? incomeAmount;
   String? _paymentMethod;
   String? _paymentStatus;
@@ -52,7 +51,7 @@ class _IncomeFormState extends State<IncomeForm> {
     if (picked != null && picked != currentDate)
       setState(() {
         currentDate = picked;
-        _pickedDate.text = DateTimeFormatter().toDateString(picked);
+        _pickedDate.text = DateTimeHelper().toIsoDateString(picked);
         /*  print('Picked date => $_pickedDate'); */
       });
   }
@@ -60,7 +59,7 @@ class _IncomeFormState extends State<IncomeForm> {
   @override
   void initState() {
     super.initState();
-    _pickedDate.text = DateTimeFormatter().toDateString(DateTime.now());
+    _pickedDate.text = DateTimeHelper().toIsoDateString(DateTime.now());
   }
 
   @override
@@ -139,6 +138,7 @@ class _IncomeFormState extends State<IncomeForm> {
                         decoration:
                             InputDecoration(labelText: 'Payment status'),
                         items: MyItemList().paymentStatusList,
+                        value: _paymentStatus,
                         validator: (val) =>
                             val == null ? 'Payment status ?' : null,
                         onChanged: (val) => setState(() {
@@ -154,6 +154,7 @@ class _IncomeFormState extends State<IncomeForm> {
                         decoration:
                             InputDecoration(labelText: 'Payment method'),
                         items: MyItemList().paymentMethodList,
+                        value: _paymentMethod,
                         /* validator: (val) =>
                           val == null ? 'Please select payment method' : null, */
                         onChanged: (val) => setState(() {
@@ -185,7 +186,7 @@ class _IncomeFormState extends State<IncomeForm> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_incomeFormKey.currentState!.validate()) {
-                          print('Can  now proceed to save data!');
+                          print('Can now proceed to save data!');
                         }
                       },
                       child: Text(

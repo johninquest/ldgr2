@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:objectid/objectid.dart';
-import 'dart:async';
 import '../../db/sp_helper.dart';
 import '../../firebase/firestore.dart';
 import '../../styles/style.dart';
 import '../../utils/date_time_helper.dart';
-import '../../utils/formatter.dart';
 import '../../utils/preprocessor.dart';
 import '../../utils/router.dart';
 import '../../shared/lists.dart';
 import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
 import 'expense_list.dart';
+import 'dart:async';
 
 class InputExpensePage extends StatelessWidget {
   const InputExpensePage({Key? key}) : super(key: key);
@@ -28,19 +27,19 @@ class InputExpensePage extends StatelessWidget {
           // backgroundColor: myRed,
         ),
         body: Center(
-          child: ExpenditureForm(),
+          child: AddExpenseForm(),
         ));
   }
 }
 
-class ExpenditureForm extends StatefulWidget {
-  const ExpenditureForm({Key? key}) : super(key: key);
+class AddExpenseForm extends StatefulWidget {
+  const AddExpenseForm({Key? key}) : super(key: key);
 
   @override
-  _ExpenditureFormState createState() => _ExpenditureFormState();
+  State<AddExpenseForm> createState() => _AddExpenseFormState();
 }
 
-class _ExpenditureFormState extends State<ExpenditureForm> {
+class _AddExpenseFormState extends State<AddExpenseForm> {
   final _expenseFormKey = GlobalKey<FormState>();
   TextEditingController _itemCategory = TextEditingController();
   TextEditingController _itemName = TextEditingController();
@@ -66,7 +65,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
     if (picked != null && picked != currentDate)
       setState(() {
         currentDate = picked;
-        _pickedDate.text = DateTimeFormatter().toDateString(picked);
+        _pickedDate.text = DateTimeHelper().toIsoDateString(picked);
         /*  print('Picked date => $_pickedDate'); */
       });
   }
@@ -81,7 +80,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
         });
       }
     });
-    _pickedDate.text = DateTimeFormatter().toDateString(DateTime.now());
+    _pickedDate.text = DateTimeHelper().toIsoDateString(DateTime.now());
   }
 
   @override
@@ -120,6 +119,7 @@ class _ExpenditureFormState extends State<ExpenditureForm> {
                   decoration: InputDecoration(labelText: 'Description'),
                   keyboardType: TextInputType.text,
                   textCapitalization: TextCapitalization.words,
+                  maxLines: 2,
 /*                   validator: (val) {
                     if (val == null || val.isEmpty) {
                       return 'Please enter item category!';
