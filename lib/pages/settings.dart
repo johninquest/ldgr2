@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../shared/app_version_info.dart';
 import '../shared/bottom_nav_bar.dart';
 import '../styles/colors.dart';
 import '../styles/style.dart';
@@ -19,7 +20,17 @@ class SettingsPage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [CurrentUser()],
+        children: [
+          CurrentUser(),
+          SizedBox(
+            height: 8.0,
+          ),
+          AppInfo(),
+          SizedBox(
+            height: 8.0,
+          ),
+          DeviceInfo()
+        ],
       ),
       bottomNavigationBar: BottomNavBar(),
     );
@@ -37,7 +48,7 @@ class CurrentUser extends StatelessWidget {
         if (!snapshot.hasData) {
           return Center(
             child: Container(
-              margin: EdgeInsets.all(3.0),
+              margin: EdgeInsets.all(8.0),
               child: Text(
                 'Offline mode',
                 style: TextStyle(color: myLightRed),
@@ -46,7 +57,6 @@ class CurrentUser extends StatelessWidget {
           );
         } else {
           final _user = snapshot.data;
-          /*  log('User => ${_user?.email}'); */
           return Center(
             child: Text(
               '${_user?.email}',

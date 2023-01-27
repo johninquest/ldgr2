@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/date_time_helper.dart';
 import '../utils/web.dart';
-import '../shared/app_version_info.dart';
 import '../shared/bottom_nav_bar.dart';
 import '../styles/style.dart';
 
@@ -75,10 +74,6 @@ class AboutPage extends StatelessWidget {
                     width: 0.5,
                   ))),
                 ),
-                SizedBox(
-                  height: 34.0,
-                ),
-                AppInfo(),
               ],
             ),
           ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:device_info_plus/device_info_plus.dart';
+import 'dart:developer';
 
 class AppInfo extends StatelessWidget {
   const AppInfo({Key? key}) : super(key: key);
@@ -17,11 +19,61 @@ class AppInfo extends StatelessWidget {
             builder:
                 (BuildContext context, AsyncSnapshot<PackageInfo> snapshot) {
               if (snapshot.hasError) {
-                // print('Error => $snapshot');
                 return Text('An error occured!');
               } else if (snapshot.hasData) {
                 final vData = snapshot.data!;
-                return Column(
+                String appVersion = 'v${vData.version}';
+                return Container(
+                  child: Text(
+                    appVersion,
+                    style: TextStyle(fontSize: 13.0),
+                  ),
+                );
+              } else {
+                return CircularProgressIndicator();
+              }
+            }),
+      ),
+    );
+  }
+}
+
+class DeviceInfo extends StatelessWidget {
+  const DeviceInfo({Key? key}) : super(key: key);
+
+  _getDeviceInfo() async {
+    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+    log('Device info => $androidInfo');
+    return androidInfo;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+        future: _getDeviceInfo(),
+        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+          if (snapshot.hasError) {
+            return Text('An error occured!');
+          } else if (snapshot.hasData) {
+            final AndroidDeviceInfo deviceData = snapshot.data!;
+            final _deviceId = deviceData.id;
+            return Container(
+              child: Text(
+                '$_deviceId',
+                style: TextStyle(fontSize: 13.0),
+              ),
+            );
+          } else {
+            return CircularProgressIndicator();
+          }
+        });
+  }
+}
+
+
+/* 
+ Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     /*  Text('App name: ${_data.appName}'),
@@ -47,11 +99,4 @@ class AppInfo extends StatelessWidget {
                     ) */
                   ],
                 );
-              } else {
-                return CircularProgressIndicator();
-              }
-            }),
-      ),
-    );
-  }
-}
+ */

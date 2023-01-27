@@ -2,12 +2,12 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
-import 'package:open_file/open_file.dart';
+/* import 'package:open_file/open_file.dart'; */
 import '../db/sp_helper.dart';
 import '../shared/snackbar_messages.dart';
 import 'currency_list.dart';
 import 'preprocessor.dart';
-
+/* 
 class PrintService {
   showGeneratedPdf(String? givenPath) {
     if (givenPath.runtimeType == String) {
@@ -277,3 +277,4 @@ capitalizeStr(String? str) {
     return '';
   }
 }
+ */

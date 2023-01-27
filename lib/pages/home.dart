@@ -1,7 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:ldgr2/shared/snackbar_messages.dart';
+import '../shared/snackbar_messages.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
 import '../shared/bottom_nav_bar.dart';
@@ -126,20 +124,29 @@ class CurrentUser extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return Center(
-            child: Text(
-              'Offline mode',
-              style: TextStyle(color: myLightRed),
+            child: Icon(
+              Icons.check_circle,
+              color: myRed,
             ),
           );
         } else {
           final _user = snapshot.data;
-          /*  log('User => ${_user?.email}'); */
           return Center(
-            child: Text(
-              '${_user?.email}',
-              style: TextStyle(color: myTeal),
-            ),
-          );
+              child: Column(
+            children: [
+              Icon(
+                Icons.check_circle,
+                color: myTeal,
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+              Text(
+                '${_user?.email}',
+                style: TextStyle(color: myTeal, fontWeight: FontWeight.bold),
+              )
+            ],
+          ));
         }
       },
     );

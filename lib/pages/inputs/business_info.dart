@@ -5,7 +5,7 @@ import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
 import '../../styles/style.dart';
 import '../../utils/preprocessor.dart';
-import '../../utils/printing.dart';
+/* import '../../utils/printing.dart'; */
 import 'dart:convert';
 
 class InputPersonPage extends StatelessWidget {
@@ -219,7 +219,7 @@ class _PersonFormState extends State<PersonForm> {
                               .then((value) {
                             SnackBarMessage().saveSuccess(context);
                             CustomDelay().bySeconds(3);
-                            PrintService().personPdf(context);
+                            /*  PrintService().personPdf(context); */
                           });
                         }
                       },
