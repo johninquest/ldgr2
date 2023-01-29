@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'dart:developer';
 
-class AppInfo extends StatelessWidget {
-  const AppInfo({Key? key}) : super(key: key);
+class VersionInfo extends StatelessWidget {
+  const VersionInfo({Key? key}) : super(key: key);
 
   Future<PackageInfo> _getPackageInfo() {
     return PackageInfo.fromPlatform();
@@ -44,7 +43,6 @@ class DeviceInfo extends StatelessWidget {
   _getDeviceInfo() async {
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-    log('Device info => $androidInfo');
     return androidInfo;
   }
 

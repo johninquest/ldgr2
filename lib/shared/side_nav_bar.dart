@@ -3,11 +3,9 @@ import 'package:ldgr2/pages/settings.dart';
 import '../pages/about.dart';
 import '../pages/inputs/business_info.dart';
 import '../pages/inputs/country.dart';
-import '../pages/contacts/contacts_list.dart';
 import '../pages/taxes/tax_list.dart';
 import '../styles/colors.dart';
 import '../utils/router.dart';
-import 'dart:developer';
 
 class SideMenu extends StatefulWidget {
   const SideMenu({Key? key}) : super(key: key);
@@ -103,22 +101,6 @@ class _SideMenuState extends State<SideMenu> {
               ),
               onTap: () => PageRouter().navigateToPage(SettingsPage(), context),
             ),
-
-            /* ListTile(
-              leading: Icon(
-                Icons.logout,
-                color: myBlue,
-              ),
-              title: Text(
-                'Log out',
-                style: TextStyle(color: myBlue),
-              ),
-              onTap: () {
-                // FirebaseAuthService().logoutUser();
-                SharedPreferencesHelper().removeData('currentUserData');
-                PageRouter().navigateToPage(LoginPage(), context);
-              },
-            ), */
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:objectid/objectid.dart';
 import '../../db/sp_helper.dart';
 import '../../firebase/firestore.dart';
 import '../../styles/style.dart';
@@ -11,6 +10,7 @@ import '../../shared/snackbar_messages.dart';
 import '../../styles/colors.dart';
 import 'expense_list.dart';
 import 'dart:async';
+import 'dart:developer';
 
 class InputExpensePage extends StatelessWidget {
   const InputExpensePage({Key? key}) : super(key: key);
@@ -212,54 +212,7 @@ class _AddExpenseFormState extends State<AddExpenseForm> {
                   margin: EdgeInsets.all(10.0),
                   child: ElevatedButton(
                     onPressed: () {
-                      String _timestampsString =
-                          DateTimeHelper().timestampForDB(DateTime.now());
-                      String _daybookItemId = ObjectId().hexString;
-                      // print('Expense record id => $_daybookItemId');
-                      Map<String, dynamic> _daybookEntryData = {
-                        'picked_date': '$currentDate',
-                        'account': 'expense',
-                        'cost_area': _costArea ?? '',
-                        'item_category': _itemCategory.text,
-                        'item_name': _itemName.text,
-                        'quantity': _quantity.text,
-                        'unit': _unit ?? '',
-                        'price': _price.text,
-                        'payment_status': _paymentStatus ?? '',
-                        'payment_method': _paymentMethod ?? '',
-                        'created_at': _timestampsString,
-                        'last_update_at': '',
-                        'doc_id': _daybookItemId,
-                        'entered_by': _currentUser ?? '',
-                      };
-                      if (_expenseFormKey.currentState!.validate()) {
-                        _fs
-                            .addItemToDaybook(_daybookItemId, _daybookEntryData)
-                            .then((val) {
-                          if (val == 'add-success') {
-                            SnackBarMessage().saveSuccess(context);
-                            if (_itemName.text != '' && _quantity.text != '') {
-                              Timer(Duration(seconds: 3), () {
-                                showDialog(
-                                    context: context,
-                                    builder: (_) =>
-                                        _addToStockDialog(_daybookItemId),
-                                    barrierDismissible: true);
-                              });
-                            } else {
-                              PageRouter()
-                                  .navigateToPage(ExpenseListPage(), context);
-                            }
-                          } else if (val == 'permission-denied') {
-                            String eMessage = 'Permission denied';
-                            return SnackBarMessage()
-                                .customErrorMessage(eMessage, context);
-                          } else {
-                            return SnackBarMessage()
-                                .generalErrorMessage(context);
-                          }
-                        });
-                      }
+                      log('Tapped save button!');
                     },
                     child: Text(
                       'SAVE',
@@ -275,78 +228,6 @@ class _AddExpenseFormState extends State<AddExpenseForm> {
           ],
         ),
       ),
-    );
-  }
-
-  Widget _addToStockDialog(String _daybookDocId) {
-    return AlertDialog(
-      title: Icon(
-        Icons.help_outline,
-        color: myBlue,
-        size: 40.0,
-      ),
-      content: Text(
-        'Add to stock ?',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontWeight: FontWeight.bold, color: myBlue, fontSize: 20.0),
-      ),
-      actions: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                PageRouter().navigateToPage(ExpenseListPage(), context);
-              },
-              child: Text(
-                'NO',
-                style: TextStyle(
-                    color: myRed,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1.0),
-              ),
-            ),
-            TextButton(
-                onPressed: () {
-                  String _timestampString =
-                      DateTimeHelper().timestampForDB(DateTime.now());
-                  String _stockItemId = ObjectId().hexString;
-                  Map<String, dynamic> _stockEntryData = {
-                    'picked_date': '$currentDate',
-                    'item_name': _itemName.text,
-                    'quantity': InputHandler().commaToPeriod(_quantity.text),
-                    'unit': _unit ?? '',
-                    'created_at': _timestampString,
-                    'last_update_at': '',
-                    'doc_id': _stockItemId,
-                    'daybook_item_id': _daybookDocId,
-                    'entered_by': _currentUser ?? '',
-                    'events': []
-                  };
-                  _fs.addItemToStock(_stockItemId, _stockEntryData).then((val) {
-                    if (val == 'add-success') {
-                      SnackBarMessage().customSuccessMessage(
-                          'Added to stock successfully', context);
-                      PageRouter().navigateToPage(ExpenseListPage(), context);
-                    } else {
-                      SnackBarMessage().generalErrorMessage(context);
-                    }
-                  });
-                },
-                child: Text(
-                  'YES',
-                  style: TextStyle(
-                      color: myGreen,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 1.0),
-                ))
-          ],
-        ),
-      ],
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(10.0))),
     );
   }
 }
