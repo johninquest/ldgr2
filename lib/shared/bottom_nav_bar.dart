@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/add_options.dart';
 import '../pages/expense/expense_list.dart';
 import '../pages/home.dart';
 import '../utils/router.dart';
@@ -54,10 +55,31 @@ class _BottomNavBarState extends State<BottomNavBar> {
       PageRouter().navigateToPage(HomePage(), context);
     }
     if (currentIndex == 1) {
-      print('Tapped add button');
+      /*  PageRouter().navigateToPage(AddOptionsPage(), context); */
+      _goToAddOptions();
     }
     if (currentIndex == 2) {
       PageRouter().navigateToPage(ExpenseListPage(), context);
     }
+  }
+
+  Route _goToAddOptions() {
+    return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          const AddOptionsPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      },
+    );
   }
 }

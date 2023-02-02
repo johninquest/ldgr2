@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ldgr2/pages/auth_gate.dart';
+import 'pages/auth_gate.dart';
 import 'styles/colors.dart';
 
 Future<void> main() async {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       theme: myTheme,
-      // darkTheme: ThemeData.dark(),
+      /* darkTheme: ThemeData.dark(), */
       home: AuthGate(),
     );
   }
